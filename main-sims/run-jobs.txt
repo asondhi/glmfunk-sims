@@ -1,0 +1,140 @@
+# p=$1 s=$2 rho=$3 design=$4 iter=$5 method=$6
+
+# Low dim
+## p = 30, 
+## s = 10, 
+## rho = 0.1, 0.2, ..., 0.5
+## design = inform
+## iter = 100
+## method = funkl2, funkl1, bym2, glm
+
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p all-20c96g do_sim_ld.slurm 30 10 0.1 1 100 1
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p all-20c96g do_sim_ld.slurm 30 10 0.2 1 100 1
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p shojaie-20c64g do_sim_ld.slurm 30 10 0.3 1 100 1
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p shojaie-20c64g do_sim_ld.slurm 30 10 0.4 1 100 1
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p shojaie-20c64g do_sim_ld.slurm 30 10 0.5 1 100 1
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p all-20c96g do_sim_ld.slurm 30 10 0.6 1 100 1
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p all-20c96g do_sim_ld.slurm 30 10 0.7 1 100 1
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p all-20c96g do_sim_ld.slurm 30 10 0.8 1 100 1
+
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p all-20c96g do_sim_ld.slurm 30 10 0.1 1 100 2
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p shojaie-20c64g do_sim_ld.slurm 30 10 0.2 1 100 2
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p shojaie-20c64g do_sim_ld.slurm 30 10 0.3 1 100 2
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p shojaie-20c64g do_sim_ld.slurm 30 10 0.4 1 100 2
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p shojaie-20c64g do_sim_ld.slurm 30 10 0.5 1 100 2
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p all-20c96g do_sim_ld.slurm 30 10 0.6 1 100 2
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p all-20c96g do_sim_ld.slurm 30 10 0.7 1 100 2
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p all-20c96g do_sim_ld.slurm 30 10 0.8 1 100 2
+
+
+nohup ./do_sim.sh 30 10 0.1 1 100 6 &
+nohup ./do_sim.sh 30 10 0.2 1 100 6 &
+nohup ./do_sim.sh 30 10 0.3 1 100 6 &
+nohup ./do_sim.sh 30 10 0.4 1 100 6 &
+nohup ./do_sim.sh 30 10 0.5 1 100 6 &
+nohup ./do_sim.sh 30 10 0.6 1 100 6 &
+nohup ./do_sim.sh 30 10 0.7 1 100 6 &
+nohup ./do_sim.sh 30 10 0.8 1 100 6 &
+
+nohup ./do_sim.sh 30 10 0.1 1 100 5 &
+nohup ./do_sim.sh 30 10 0.2 1 100 5 
+nohup ./do_sim.sh 30 10 0.3 1 100 5 &
+nohup ./do_sim.sh 30 10 0.4 1 100 5 &
+nohup ./do_sim.sh 30 10 0.5 1 100 5 &
+nohup ./do_sim.sh 30 10 0.6 1 100 5 &
+nohup ./do_sim.sh 30 10 0.7 1 100 5 &
+nohup ./do_sim.sh 30 10 0.8 1 100 5 &
+
+
+
+# HD - inform
+## p = 300, 
+## s = 20, 
+## rho = 0.1, 0.2, ..., 0.5
+## design = inform
+## iter = 100
+## method = funkl2, funkl1, rnc-lasso, lasso
+
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p shojaie-20c64g do_sim_hd.slurm 300 20 0.1 1 100 1
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p shojaie-20c64g do_sim_hd.slurm 300 20 0.2 1 100 1
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p shojaie-20c64g do_sim_hd.slurm 300 20 0.3 1 100 1
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p shojaie-20c64g do_sim_hd.slurm 300 20 0.4 1 100 1
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p shojaie-20c64g do_sim_hd.slurm 300 20 0.5 1 100 1
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p shojaie-20c64g do_sim_hd.slurm 300 20 0.6 1 100 1
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p shojaie-20c64g do_sim_hd.slurm 300 20 0.7 1 100 1
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p shojaie-20c64g do_sim_hd.slurm 300 20 0.8 1 100 1
+
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p shojaie-20c64g do_sim_hd.slurm 300 20 0.1 1 100 2
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p shojaie-20c64g do_sim_hd.slurm 300 20 0.2 1 100 2
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p shojaie-20c64g do_sim_hd.slurm 300 20 0.3 1 100 2
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p shojaie-20c64g do_sim_hd.slurm 300 20 0.4 1 100 2
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p shojaie-20c64g do_sim_hd.slurm 300 20 0.5 1 100 2
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p shojaie-20c64g do_sim_hd.slurm 300 20 0.6 1 100 2
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p shojaie-20c64g do_sim_hd.slurm 300 20 0.7 1 100 2
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p shojaie-20c64g do_sim_hd.slurm 300 20 0.8 1 100 2
+
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p shojaie-20c64g do_sim_hd.slurm 300 20 0.1 1 100 3
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p shojaie-20c64g do_sim_hd.slurm 300 20 0.2 1 100 3
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p shojaie-20c64g do_sim_hd.slurm 300 20 0.3 1 100 3
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p shojaie-20c64g do_sim_hd.slurm 300 20 0.4 1 100 3
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p shojaie-20c64g do_sim_hd.slurm 300 20 0.5 1 100 3
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p shojaie-20c64g do_sim_hd.slurm 300 20 0.6 1 100 3
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p shojaie-20c64g do_sim_hd.slurm 300 20 0.7 1 100 3
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p shojaie-20c64g do_sim_hd.slurm 300 20 0.8 1 100 3
+
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p shojaie-20c128g do_sim_hd.slurm 300 20 0.1 1 100 4
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p shojaie-20c128g do_sim_hd.slurm 300 20 0.2 1 100 4
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p shojaie-20c128g do_sim_hd.slurm 300 20 0.3 1 100 4
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p shojaie-20c128g do_sim_hd.slurm 300 20 0.4 1 100 4
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p shojaie-20c128g do_sim_hd.slurm 300 20 0.5 1 100 4
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p shojaie-20c128g do_sim_hd.slurm 300 20 0.6 1 100 4
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p shojaie-20c128g do_sim_hd.slurm 300 20 0.7 1 100 4
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p shojaie-20c128g do_sim_hd.slurm 300 20 0.8 1 100 4
+
+
+
+
+# HD - uninform
+## p = 300, 
+## s = 20, 
+## rho = 0.1, 0.2, ..., 0.5
+## design = uninform
+## iter = 100
+## method = funkl2, funkl1, rnc-lasso, lasso
+
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p shojaie-20c64g do_sim_hd.slurm 300 20 0.1 2 100 1
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p shojaie-20c64g do_sim_hd.slurm 300 20 0.2 2 100 1
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p shojaie-20c64g do_sim_hd.slurm 300 20 0.3 2 100 1
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p shojaie-20c64g do_sim_hd.slurm 300 20 0.4 2 100 1
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p shojaie-20c64g do_sim_hd.slurm 300 20 0.5 2 100 1
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p shojaie-20c64g do_sim_hd.slurm 300 20 0.6 2 100 1
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p shojaie-20c64g do_sim_hd.slurm 300 20 0.7 2 100 1
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p shojaie-20c64g do_sim_hd.slurm 300 20 0.8 2 100 1
+
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p shojaie-20c64g do_sim_hd.slurm 300 20 0.1 2 100 2
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p shojaie-20c64g do_sim_hd.slurm 300 20 0.2 2 100 2
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p shojaie-20c64g do_sim_hd.slurm 300 20 0.3 2 100 2
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p shojaie-20c64g do_sim_hd.slurm 300 20 0.4 2 100 2
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p shojaie-20c64g do_sim_hd.slurm 300 20 0.5 2 100 2
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p shojaie-20c64g do_sim_hd.slurm 300 20 0.6 2 100 2
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p shojaie-20c64g do_sim_hd.slurm 300 20 0.7 2 100 2
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p shojaie-20c64g do_sim_hd.slurm 300 20 0.8 2 100 2
+
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p shojaie-20c64g do_sim_hd.slurm 300 20 0.1 2 100 3
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p shojaie-20c64g do_sim_hd.slurm 300 20 0.2 2 100 3
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p shojaie-20c64g do_sim_hd.slurm 300 20 0.3 2 100 3
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p shojaie-20c64g do_sim_hd.slurm 300 20 0.4 2 100 3
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p shojaie-20c64g do_sim_hd.slurm 300 20 0.5 2 100 3
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p shojaie-20c64g do_sim_hd.slurm 300 20 0.6 2 100 3
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p shojaie-20c64g do_sim_hd.slurm 300 20 0.7 2 100 3
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p shojaie-20c64g do_sim_hd.slurm 300 20 0.8 2 100 3
+
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p shojaie-20c128g do_sim_hd.slurm 300 20 0.1 2 100 4
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p shojaie-20c128g do_sim_hd.slurm 300 20 0.2 2 100 4
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p shojaie-20c128g do_sim_hd.slurm 300 20 0.3 2 100 4
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p shojaie-20c128g do_sim_hd.slurm 300 20 0.4 2 100 4
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p shojaie-20c128g do_sim_hd.slurm 300 20 0.5 2 100 4
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p shojaie-20c128g do_sim_hd.slurm 300 20 0.6 2 100 4
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p shojaie-20c128g do_sim_hd.slurm 300 20 0.7 2 100 4
+sbatch -pcompute -n 20 --mail-type=BEGIN,END,FAIL --mail-user=asondhi@uw.edu -p shojaie-20c128g do_sim_hd.slurm 300 20 0.8 2 100 4
+
